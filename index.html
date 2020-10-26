@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Dashboard</title>
+      <!-- INCLUDE CSS -->
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <!-- INCLUDING JQUERY-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- INCLUDING EXTERNAL JS-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <div class="container-fluid">
+         <div class="App d-flex">
+            <div class="header">
+               <ul class="navbar-nav text-left">
+                  <li class="nav-item d-flex justify-content-between">
+                     <a href="#" class="nav-link logo">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" size="25" class="brand-svg" height="25" width="25" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M209.094 19.53L150.53 35.22l234.19 234.186 11.436 11.47-15.625 4.187-182.25 48.78L184 387.032l307.78-82.467.408-1.5L209.094 19.53zm-77.75 22.94L25.78 436.31l45.376 45.375 87.375-326.062 4.19-15.656 11.436 11.468 133.688 133.718 52.22-13.97L131.343 42.47zm41.062 133.655L87.53 492.845l381.126-102.126 17.53-65.314L173.22 409.28l-15.657 4.19 4.218-15.658 49.126-183.156-38.5-38.53z"></path>
+                        </svg>
+                        IntelMe
+                     </a>
+                     <button class="navbar-toggler mr-4 collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="40px" width="40px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(255, 255, 255);">
+                              <path d="M4 6H20V8H4zM8 11H20V13H8zM13 16H20V18H13z"></path>
+                           </svg>
+                        </span>
+                     </button>
+                  </li>
+                  <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
+                     <li class="nav-item">
+                        <a class="nav-link">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="20" class="mb-1" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M3,13h1v2v5c0,1.103,0.897,2,2,2h3h6h3c1.103,0,2-0.897,2-2v-5v-2h1c0.404,0,0.77-0.244,0.924-0.617 c0.155-0.374,0.069-0.804-0.217-1.09l-9-9c-0.391-0.391-1.023-0.391-1.414,0l-9,9c-0.286,0.286-0.372,0.716-0.217,1.09 C2.23,12.756,2.596,13,3,13z M10,20v-5h4v5H10z M12,4.414l6,6V15l0,0l0.001,5H16v-5c0-1.103-0.897-2-2-2h-4c-1.103,0-2,0.897-2,2v5 H6v-5v-3v-1.586L12,4.414z"></path>
+                           </svg>
+                           Dashboard
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link active">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" size="20" class="mb-1" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0 0 51.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z"></path>
+                              <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path>
+                           </svg>
+                           My Tasks
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.2" baseProfile="tiny" viewBox="0 0 24 24" size="20" class="mb-1" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M19.707 7.293l-4-4c-.187-.188-.441-.293-.707-.293h-8c-1.654 0-3 1.346-3 3v12c0 1.654 1.346 3 3 3h10c1.654 0 3-1.346 3-3v-10c0-.266-.105-.52-.293-.707zm-2.121.707h-1.086c-.827 0-1.5-.673-1.5-1.5v-1.086l2.586 2.586zm-.586 11h-10c-.552 0-1-.448-1-1v-12c0-.552.448-1 1-1h7v1.5c0 1.379 1.121 2.5 2.5 2.5h1.5v9c0 .552-.448 1-1 1z"></path>
+                           </svg>
+                           My Projects
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" size="20" class="mb-1" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.995-.944v-.002.002zM7.022 13h7.956a.274.274 0 00.014-.002l.008-.002c-.002-.264-.167-1.03-.76-1.72C13.688 10.629 12.718 10 11 10c-1.717 0-2.687.63-3.24 1.276-.593.69-.759 1.457-.76 1.72a1.05 1.05 0 00.022.004zm7.973.056v-.002.002zM11 7a2 2 0 100-4 2 2 0 000 4zm3-2a3 3 0 11-6 0 3 3 0 016 0zM6.936 9.28a5.88 5.88 0 00-1.23-.247A7.35 7.35 0 005 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 015 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10c-1.668.02-2.615.64-3.16 1.276C1.163 11.97 1 12.739 1 13h3c0-1.045.323-2.086.92-3zM1.5 5.5a3 3 0 116 0 3 3 0 01-6 0zm3-2a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd"></path>
+                           </svg>
+                           People
+                        </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link">
+                           <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" size="20" class="mb-1" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                              <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                           </svg>
+                           Statictic
+                        </a>
+                     </li>
+                  </div>
+               </ul>
+            </div>
+            <div class="head">
+               <div class="contain">
+                  <div class="w-100 head-notifi d-flex align-items-center justify-content-between">
+                     <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                           <span class="input-group-text" id="addon-wrapping">
+                              <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="25px" width="25px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                                 <circle cx="11" cy="11" r="8"></circle>
+                                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                              </svg>
+                           </span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search for anything..." aria-label="Username" aria-describedby="addon-wrapping">
+                     </div>
+                     <div class="notif d-flex align-items-center">
+                        <div class="mx-4">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                              <path d="M8 16a2 2 0 002-2H6a2 2 0 002 2z"></path>
+                              <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 004 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 00-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 111.99 0A5.002 5.002 0 0113 6c0 .88.32 4.2 1.22 6z" clip-rule="evenodd"></path>
+                           </svg>
+                           
+                        </div>
+                        <div class="mx-4">
+                           <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                           </svg>
+                   
+                        </div>
+                        <div class="mx-4">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                              <path fill-rule="evenodd" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 00-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 00-.163-.505L1.71 6.745l4.052-.576a.525.525 0 00.393-.288l1.847-3.658 1.846 3.658a.525.525 0 00.393.288l4.052.575-2.906 2.77a.564.564 0 00-.163.506l.694 3.957-3.686-1.894a.503.503 0 00-.461 0z" clip-rule="evenodd"></path>
+                           </svg>
+                        </div>
+                        <div class="avatar mx-3"><img width="40" heigth="40" class="rounded-circle" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar"></div>
+                     </div>
+                  </div>
+                  <div class="navigation mt-4"><a href="#"><span>Dashboard </span>&gt; My tasks</a></div>
+                  <div class="content mt-2 p-2">
+                     <div class="review d-flex align-items-center justify-content-between">
+                        <div class="dropdown">
+                           <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">To Review</a>
+                           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
+                        </div>
+                        <div class="plus-review">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" t="1551322312294" viewBox="0 0 1024 1024" version="1.1" pId="10297" height="18px" width="18px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(255, 255, 255);">
+                              <defs></defs>
+                              <path d="M474 152m8 0l60 0q8 0 8 8l0 704q0 8-8 8l-60 0q-8 0-8-8l0-704q0-8 8-8Z" pId="10298"></path>
+                              <path d="M168 474m8 0l672 0q8 0 8 8l0 60q0 8-8 8l-672 0q-8 0-8-8l0-60q0-8 8-8Z" pId="10299"></path>
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="search-bar px-3 d-flex align-items-center justify-content-between">
+                        <div class="input-group flex-nowrap">
+                           <div class="input-group-prepend">
+                              <span class="input-group-text" id="addon-wrapping">
+                                 <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(8, 155, 171);">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                 </svg>
+                              </span>
+                           </div>
+                           <input type="text" class="form-control" placeholder="Search for tasks..." aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                        <a type="button" class="btn">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.2" baseProfile="tiny" viewBox="0 0 24 24" class="mr-2  mb-1" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(8, 155, 171);">
+                              <path d="M19.707 7.293l-4-4c-.187-.188-.441-.293-.707-.293h-8c-1.654 0-3 1.346-3 3v12c0 1.654 1.346 3 3 3h10c1.654 0 3-1.346 3-3v-10c0-.266-.105-.52-.293-.707zm-2.121.707h-1.086c-.827 0-1.5-.673-1.5-1.5v-1.086l2.586 2.586zm-.586 11h-10c-.552 0-1-.448-1-1v-12c0-.552.448-1 1-1h7v1.5c0 1.379 1.121 2.5 2.5 2.5h1.5v9c0 .552-.448 1-1 1z"></path>
+                           </svg>
+                           Project
+                        </a>
+                        <a type="button" class="btn">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="mr-2  mb-1" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(8, 155, 171);">
+                              <path fill-rule="evenodd" d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.995-.944v-.002.002zM7.022 13h7.956a.274.274 0 00.014-.002l.008-.002c-.002-.264-.167-1.03-.76-1.72C13.688 10.629 12.718 10 11 10c-1.717 0-2.687.63-3.24 1.276-.593.69-.759 1.457-.76 1.72a1.05 1.05 0 00.022.004zm7.973.056v-.002.002zM11 7a2 2 0 100-4 2 2 0 000 4zm3-2a3 3 0 11-6 0 3 3 0 016 0zM6.936 9.28a5.88 5.88 0 00-1.23-.247A7.35 7.35 0 005 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 015 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10c-1.668.02-2.615.64-3.16 1.276C1.163 11.97 1 12.739 1 13h3c0-1.045.323-2.086.92-3zM1.5 5.5a3 3 0 116 0 3 3 0 01-6 0zm3-2a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd"></path>
+                           </svg>
+                           Assignees
+                        </a>
+                        <a type="button" class="btn">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="mr-2  mb-1" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(8, 155, 171);">
+                              <path fill-rule="evenodd" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 00-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 00-.163-.505L1.71 6.745l4.052-.576a.525.525 0 00.393-.288l1.847-3.658 1.846 3.658a.525.525 0 00.393.288l4.052.575-2.906 2.77a.564.564 0 00-.163.506l.694 3.957-3.686-1.894a.503.503 0 00-.461 0z" clip-rule="evenodd"></path>
+                           </svg>
+                           Priority
+                        </a>
+                        <a type="button" class="btn">
+                           <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mr-2 mb-1" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(8, 155, 171);">
+                              <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"></path>
+                           </svg>
+                           Other filters
+                        </a>
+                     </div>
+                     <div class="result mt-4 px-2">
+                        <div class="page-result d-flex align-items-center justify-content-between">
+                           <div class="pages d-flex">
+                              <div class="dropdown">
+                                 <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">20 per page</a>
+                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
+                              </div>
+                              <a class="btn"> Manage columns</a>
+                           </div>
+                           <div class="page-num mr-2"><span>1</span><span>2</span><span>3</span></div>
+                        </div>
+                        <div class="heading-title mx-2 mt-4 row">
+                           <p class="col-1 col-sm-2">
+                              Due
+                              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="15px" width="15px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                                 <path d="M868 545.5L536.1 163a31.96 31.96 0 0 0-48.3 0L156 545.5a7.97 7.97 0 0 0 6 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z"></path>
+                              </svg>
+                           </p>
+                           <p class="col-3 col-sm-2">Title</p>
+                           <p class="col-2">Project</p>
+                           <p class="col-2">Updated</p>
+                           <p class="col-2">Asignees</p>
+                           <p class="col-2">Priority</p>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                           <div class="card">
+                              <div class="card-header one" id="headingOne">
+                                 <button class="btn btn-link btn-block m-0 p-0" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="heading-title row text-left">
+                                       <p class="col-1 p-0 text-center head-p date">14 Mar 20</p>
+                                       <p class="col-3 col-sm-2 head-p">Ground Floor 3A</p>
+                                       <p class="col-2 head-p">St Marie Hospital</p>
+                                       <p class="col-2 head-p">14 Mar 20</p>
+                                       <div class="col-2"><img width="30" heigth="30" class="rounded-circle assignees-img" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar"></div>
+                                       <div class="col-2 col-sm-3 col-xs-4 d-flex align-items-center justify-content-between">
+                                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="25px" width="25px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(212, 175, 55);">
+                                             <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path>
+                                          </svg>
+                                          <a class="btn summary">Summary</a>
+                                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                                             <path d="M256 217.9L383 345c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.3-24.6 0-34L273 167c-9.1-9.1-23.7-9.3-33.1-.7L95 310.9c-4.7 4.7-7 10.9-7 17s2.3 12.3 7 17c9.4 9.4 24.6 9.4 33.9 0l127.1-127z"></path>
+                                          </svg>
+                                       </div>
+                                    </div>
+                                 </button>
+                              </div>
+                              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                 <div class="card-body">
+                                    <div class="d-flex">
+                                       <div class="s">
+                                          <p class="key">Keywords:</p>
+                                       </div>
+                                       <div class="key-result">
+                                          <p>Hydraulics, Lorem ipsum, Lorem ipsum</p>
+                                       </div>
+                                       <div class="matching-file ml-auto d-flex">
+                                          <p>See matching files</p>
+                                          <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" class="ml-2" height="25px" width="25px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+                                          </svg>
+                                       </div>
+                                    </div>
+                                    <div class="d-flex">
+                                       <div class="s">
+                                          <p class="key">Desciption:</p>
+                                       </div>
+                                       <div class="key-result">
+                                          <p>Lorem ipsum Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard</p>
+                                       </div>
+                                    </div>
+                                    <div class="d-flex">
+                                       <div class="s">
+                                          <p class="key">Location:</p>
+                                       </div>
+                                       <div class="key-result">
+                                          <p>Local drive</p>
+                                       </div>
+                                    </div>
+                                    <div class="d-flex comments">
+                                       <div class="s">
+                                          <p class="key">Comments:</p>
+                                       </div>
+                                       <div class="key-result">
+                                          <p class="date">12 Mar 20</p>
+                                          <div class="comments w-100">
+                                             <div class="ml-2"><img width="30" heigth="30" class="rounded-circle assignees-img" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar">Lorem ipsum<a class="text-primary"> @maria.mondala </a>dolor sit amet, consectetur</div>
+                                             <div class="reply"><img width="25" heigth="25" class="rounded-circle assignees-img" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar">1reply</div>
+                                             <div><img width="30" heigth="30" class="rounded-circle assignees-img" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar">lorem ipsum quia dolor sit amet, consectetur, adipisci velit, lorem ipsum quia dolor sit amet<a class="all-comments text-right d-block">See all comments</a></div>
+                                             <div class="add-comment mt-3">
+                                                <div>
+                                                   <div class="comment-input d-flex align-items-center justify-content-between"><img width="25" heigth="25" class="rounded-circle assignees-img m-2 " src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar"><input type="text" class="form-control pl-0" placeholder="Add a comment..." aria-label="Username" aria-describedby="basic-addon1"></div>
+                                                   <div class="icons p-2">
+                                                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mx-3" height="18px" width="18px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                                                         <path d="M12,1.73A10.27,10.27,0,1,0,22.24,12,10.25,10.25,0,0,0,12,1.73ZM21,12a9,9,0,1,1-9-9A9,9,0,0,1,21,12Z"></path>
+                                                         <path d="M8.8,11.05a1.55,1.55,0,1,0-1.51-1.5A1.56,1.56,0,0,0,8.8,11.05Z"></path>
+                                                         <path d="M15.44,11.05a1.55,1.55,0,1,0,0-3.09,1.53,1.53,0,0,0-1.51,1.59A1.51,1.51,0,0,0,15.44,11.05Z"></path>
+                                                         <path d="M12.19,16.35A6.58,6.58,0,0,1,6.9,13.5a5.71,5.71,0,0,0,5.3,4,5.54,5.54,0,0,0,5.31-4A6.27,6.27,0,0,1,12.19,16.35Z"></path>
+                                                      </svg>
+                                                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mx-3" height="18px" width="18px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                                                         <path fill="none" stroke="#000" stroke-width="2" d="M22,12 C22,12 19.0000009,15.0000004 13.0000004,21.0000004 C6.99999996,27.0000004 -2.00000007,18.0000004 3.99999994,12.0000004 C9.99999996,6.00000037 9,7.00000011 13,3.00000008 C17,-0.999999955 23,4.99999994 19,9.00000005 C15,13.0000002 12.0000004,16.0000007 9.99999995,18.0000004 C7.99999952,20 5,17 6.99999995,15.0000004 C8.99999991,13.0000007 16,6 16,6"></path>
+                                                      </svg>
+                                                      <span class="email mx-2">@</span>
+                                                      <div class="send">
+                                                         <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mx-3" height="18px" width="18px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(20, 198, 218);">
+                                                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                                                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                                         </svg>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="view-comments"><a class="btn view">View file</a><a class="btn summary"> See my summary</a></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="card two">
+                              <div class="card-header two" id="headingTwo">
+                                 <button class="btn btn-link btn-block m-0 p-0" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    <div class="heading-title row text-left">
+                                       <p class="col-1 p-0 text-center head-p">20 Mar 20</p>
+                                       <p class="col-3 col-sm-2 head-p">First Floor 405</p>
+                                       <p class="col-2 head-p">Beech Hyde primary</p>
+                                       <p class="col-2 head-p">10 Mar 20</p>
+                                       <div class="col-2">
+                                          <img width="30" heigth="30" class="rounded-circle assignees-img" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar"><img width="30" heigth="30" class="rounded-circle assignees-img multi-img" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar"><img width="30" heigth="30" class="rounded-circle assignees-img multi-img" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar">
+                                          <p class="d-inline head-p"> and 7 others</p>
+                                       </div>
+                                       <div class="col-2 col-sm-3 d-flex align-items-center justify-content-between">
+                                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="25px" width="25px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(212, 175, 55);">
+                                             <path fill-rule="evenodd" d="M5.354 5.119L7.538.792A.516.516 0 018 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0116 6.32a.55.55 0 01-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.519.519 0 01-.146.05c-.341.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 01-.171-.403.59.59 0 01.084-.302.513.513 0 01.37-.245l4.898-.696zM8 12.027c.08 0 .16.018.232.056l3.686 1.894-.694-3.957a.564.564 0 01.163-.505l2.906-2.77-4.052-.576a.525.525 0 01-.393-.288L8.002 2.223 8 2.226v9.8z" clip-rule="evenodd"></path>
+                                          </svg>
+                                          <a class="btn summary">Summary</a>
+                                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                                             <path d="M256 217.9L383 345c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.3-24.6 0-34L273 167c-9.1-9.1-23.7-9.3-33.1-.7L95 310.9c-4.7 4.7-7 10.9-7 17s2.3 12.3 7 17c9.4 9.4 24.6 9.4 33.9 0l127.1-127z"></path>
+                                          </svg>
+                                       </div>
+                                    </div>
+                                 </button>
+                              </div>
+                              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                 <div class="card-body">
+                                    <div class="d-flex">
+                                       <div class="s">
+                                          <p class="key">Keywords:</p>
+                                       </div>
+                                       <div class="key-result">
+                                          <p>Hydraulics, Lorem ipsum, Lorem ipsum</p>
+                                       </div>
+                                       <div class="matching-file ml-auto d-flex">
+                                          <p>See matching files</p>
+                                          <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" class="ml-2" height="25px" width="25px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+                                          </svg>
+                                       </div>
+                                    </div>
+                                    <div class="d-flex">
+                                       <div class="s">
+                                          <p class="key">Desciption:</p>
+                                       </div>
+                                       <div class="key-result">
+                                          <p>Lorem ipsum Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard</p>
+                                       </div>
+                                    </div>
+                                    <div class="d-flex">
+                                       <div class="s">
+                                          <p class="key">Location:</p>
+                                       </div>
+                                       <div class="key-result">
+                                          <p>Local drive</p>
+                                       </div>
+                                    </div>
+                                    <div class="d-flex comments">
+                                       <div class="s">
+                                          <p class="key">Comments:</p>
+                                       </div>
+                                       <div class="key-result">
+                                          <p class="date">12 Mar 20</p>
+                                          <div class="comments w-100">
+                                             <div class="ml-2"><img width="30" heigth="30" class="rounded-circle assignees-img" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar">Lorem ipsum<a class="text-primary"> @maria.mondala </a>dolor sit amet, consectetur</div>
+                                             <div class="reply"><img width="25" heigth="25" class="rounded-circle assignees-img" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar">1reply</div>
+                                             <div><img width="30" heigth="30" class="rounded-circle assignees-img" src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar">lorem ipsum quia dolor sit amet, consectetur, adipisci velit, lorem ipsum quia dolor sit amet<a class="all-comments text-right d-block">See all comments</a></div>
+                                             <div class="add-comment mt-3">
+                                                <div>
+                                                   <div class="comment-input d-flex align-items-center justify-content-between"><img width="25" heigth="25" class="rounded-circle assignees-img m-2 " src="https://cdn4.iconfinder.com/data/icons/hipster-items-cartoon/512/val71_14-512.png" alt="avatar"><input type="text" class="form-control pl-0" placeholder="Add a comment..." aria-label="Username" aria-describedby="basic-addon1"></div>
+                                                   <div class="icons p-2">
+                                                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mx-3" height="18px" width="18px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                                                         <path d="M12,1.73A10.27,10.27,0,1,0,22.24,12,10.25,10.25,0,0,0,12,1.73ZM21,12a9,9,0,1,1-9-9A9,9,0,0,1,21,12Z"></path>
+                                                         <path d="M8.8,11.05a1.55,1.55,0,1,0-1.51-1.5A1.56,1.56,0,0,0,8.8,11.05Z"></path>
+                                                         <path d="M15.44,11.05a1.55,1.55,0,1,0,0-3.09,1.53,1.53,0,0,0-1.51,1.59A1.51,1.51,0,0,0,15.44,11.05Z"></path>
+                                                         <path d="M12.19,16.35A6.58,6.58,0,0,1,6.9,13.5a5.71,5.71,0,0,0,5.3,4,5.54,5.54,0,0,0,5.31-4A6.27,6.27,0,0,1,12.19,16.35Z"></path>
+                                                      </svg>
+                                                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="mx-3" height="18px" width="18px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(132, 141, 149);">
+                                                         <path fill="none" stroke="#000" stroke-width="2" d="M22,12 C22,12 19.0000009,15.0000004 13.0000004,21.0000004 C6.99999996,27.0000004 -2.00000007,18.0000004 3.99999994,12.0000004 C9.99999996,6.00000037 9,7.00000011 13,3.00000008 C17,-0.999999955 23,4.99999994 19,9.00000005 C15,13.0000002 12.0000004,16.0000007 9.99999995,18.0000004 C7.99999952,20 5,17 6.99999995,15.0000004 C8.99999991,13.0000007 16,6 16,6"></path>
+                                                      </svg>
+                                                      <span class="email mx-2">@</span>
+                                                      <div class="send">
+                                                         <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mx-3" height="18px" width="18px" xmlns="http://www.w3.org/2000/svg" style="color: rgb(20, 198, 218);">
+                                                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                                                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                                         </svg>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="view-comments"><a class="btn view">View file</a><a class="btn summary"> See my summary</a></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
